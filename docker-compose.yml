@@ -1,0 +1,13 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: classgraph-falkordb
+    ports:
+      - "6379:6379"
+      - "3000:3000"
+    volumes:
+      - classgraph_data:/var/lib/falkordb/data
+    restart: unless-stopped
+
+volumes:
+  classgraph_data:
